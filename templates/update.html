@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+    <h2>Update Task:</h2>
+    <form action="/update/{{ task.id }}" method="POST">
+        <div class="input-group mb-3 content">
+            <div class="input-group-prepend">
+                <span class="input-group-text trans" id="inputGroup-sizing-default">Update Task:</span>
+            </div>
+            <input type="text" name="content" id="content" value="{{ task.content }}" class="form-control trans"
+                   aria-label="Default"
+                   aria-describedby="inputGroup-sizing-default">
+            <button type="submit" class="btn btn-success">Save</button>
+        </div>
+
+
+    </form>
+{% endblock %}

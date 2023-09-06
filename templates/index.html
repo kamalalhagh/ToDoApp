@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="content">
+        {% if tasks|length <1 %}
+            <h4>Your list is empty!</h4>
+        {% else %}
+            <table class="table table-striped trans">
+                <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Task</th>
+                    <th scope="col">Added</th>
+                    <th scope="col">Actions</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for task in tasks %}
+                    <tr>
+                        <th scope="row">{{ task.id }}</th>
+                        <td>{{ task.content }}</td>
+                        <td>{{ task.date_created.date() }}</td>
+                        <td>
+                            <a href="/update/{{ task.id }}" class="btn btn-warning btn-sm">Update</a>
+                            <a href="/delete/{{ task.id }}" class="btn btn-danger btn-sm">Delete</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        {% endif %}
+
+        <form method="POST">
+
+            <div class="input-group mb-3 content">
+                <div class="input-group-prepend">
+                    <span class="input-group-text trans" id="inputGroup-sizing-default">New Task:</span>
+                </div>
+                <input type="text" name="content" id="content" class="form-control trans" aria-label="Default"
+                       aria-describedby="inputGroup-sizing-default">
+                <button type="submit" class="btn btn-primary">Add to list</button>
+
+            </div>
+
+
+        </form>
+    </div>
+
+{% endblock %}

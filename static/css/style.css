@@ -1,0 +1,23 @@
+body {
+    padding: 10%;
+    text-align: center;
+    color: white;
+    background-image: url("/static/images/bg.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.trans {
+    background-color: #fff;
+    color: #000;
+    opacity: .8;
+
+}
+
+.content {
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 20px;
+}
+
